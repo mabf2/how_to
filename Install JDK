@@ -32,3 +32,11 @@ $ java -version
 openjdk version "18" 2022-03-22
 OpenJDK Runtime Environment (build 18+36-2087)
 OpenJDK 64-Bit Server VM (build 18+36-2087, mixed mode, sharing)
+
+
+$ sudo nano /etc/profile
+JAVA_HOME=/usr/lib/jvm/jdk1.7.0
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
