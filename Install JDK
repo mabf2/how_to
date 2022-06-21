@@ -1,0 +1,34 @@
+Install OpenJDK 18 Debian
+Install curl or wget downloader utility:
+
+$ sudo apt update
+$ sudo apt install -y curl wget
+
+Visit JDK 18 releases page to download the latest archive.
+$ curl -O https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.tar.gz
+
+Extract downloaded file using tar command.
+$ tar xvf jdk-18_linux-x64_bin.tar.gz
+
+Move the resulting folder to /opt directory.
+$ sudo mv jdk-18 /opt/
+
+Configure Java environment:
+
+$ sudo tee /etc/profile.d/jdk18.sh <<EOF
+export JAVA_HOME=/opt/jdk-18
+export PATH=\$PATH:\$JAVA_HOME/bin
+EOF
+
+Source your profile file and check java command
+$ source /etc/profile.d/jdk18.sh
+
+Confirm Java version.
+$ echo $JAVA_HOME
+/opt/jdk-18
+
+Confirm Java version.
+$ java -version
+openjdk version "18" 2022-03-22
+OpenJDK Runtime Environment (build 18+36-2087)
+OpenJDK 64-Bit Server VM (build 18+36-2087, mixed mode, sharing)
