@@ -1,0 +1,36 @@
+$ wget https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.deb
+$ cd ~/Downloads && sudo apt install ./jdk-18_linux-x64_bin.deb
+
+$ sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-18/bin/java 1
+$ sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-18/bin/javac 1
+$ sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk-18/bin/jar 1
+
+$ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
+$ sudo update-alternatives --config jar
+
+$ java -version
+$ javac -version
+
+$ export JAVA_HOME=/usr/lib/jvm/jdk-18
+$ setenv JAVA_HOME=/usr/lib/jvm/jdk-18
+
+$ sudo gedit /etc/profile.d/jdk.sh
+
+em seguida, adicione as seguintes linhas:
+export J2SDKDIR=/usr/lib/jvm/jdk-18
+export J2REDIR=/usr/lib/jvm/jdk-18
+export PATH=$PATH:/usr/lib/jvm/jdk-18/bin:/usr/lib/jvm/jdk-18/db/bin
+export JAVA_HOME=/usr/lib/jvm/jdk-18
+export DERBY_HOME=/usr/lib/jvm/jdk-18/db
+
+$ sudo gedit /etc/profile.d/jdk.csh
+
+adicione as seguintes linhas e salve-o:
+setenv J2SDKDIR /usr/lib/jvm/jdk-18
+setenv J2REDIR /usr/lib/jvm/jdk-18
+setenv PATH ${PATH}:/usr/lib/jvm/jdk-18/bin:/usr/lib/jvm/jdk-18/db/bin
+setenv JAVA_HOME /usr/lib/jvm/jdk-18
+setenv DERBY_HOME /usr/lib/jvm/jdk-18/db
+
+$ sudo chmod +x /etc/profile.d/jdk.csh /etc/profile.d/jdk.sh
