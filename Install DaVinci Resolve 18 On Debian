@@ -1,0 +1,37 @@
+0. Enable contrib and non-free in sources.list
+sudo nano /etc/apt/sources.list
+
+1. Install xorriso and fakeroot
+sudo apt install fakeroot xorriso
+
+2. Install NVIDIA proprietary drivers and CUDA
+sudo apt install nvidia-driver nvidia-opencl-icd libcuda1 libnvidia-encode1
+
+3. Downloaed MakeResolveDeb Multi
+https://www.danieltufvesson.com/makeresolvedeb
+
+4. Create the *.deb package
+./makeresolvedeb_1.6.0_multi.sh DaVinci_Resolve_Studio_18.0_Linux.run
+
+5. Install DaVinci Resolve 18 Debian package
+sudo apt install ./davinci-resolve-studio_18.0-mrd1.6.0_amd64.deb
+
+6. UI scaling
+Using Resolve on a HiDPI screen requires the use of a magnifying glass. Let’s do something about that.
+The easiest way is to add QT_DEVICE_PIXEL_RATIO=2 QT_AUTO_SCREEN_SCALE_FACTOR=true to your Desktop shortcut or menu entry.
+Editing the menu entry
+sudo nano /usr/share/applications/davinci-resolve-studio.desktop
+Editing the desktop shortcut
+
+nano ~/Desktop/davinci-resolve-studio.desktop
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Exec=env QT_DEVICE_PIXEL_RATIO=2 QT_AUTO_SCREEN_SCALE_FACTOR=true /opt/resolve/bin/resolve
+Icon=/opt/resolve/graphics/DV_Resolve.png
+Name=DaVinci
+Terminal=false
+MimeType=application/x-resolveproj;
+Type=Application
+StartupNotify=true
+Categories=AudioVideo
