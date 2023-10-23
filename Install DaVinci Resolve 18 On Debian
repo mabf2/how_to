@@ -1,6 +1,6 @@
 0. Enable contrib and non-free in sources.list
 sudo nano /etc/apt/sources.list
-
+ 
 1. Install xorriso and fakeroot
 sudo apt install fakeroot xorriso
 
