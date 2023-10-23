@@ -1,1 +1,5 @@
 sudo flatpak install flathub io.github.hakandundar34coding.system-monitoring-center
+sudo flatpak install flathub io.github.hakandundar34coding.mini-system-monitor
+
+Link para matéria
+https://teclinux.com/monitoramento-de-sistema-conheca-um-otimo-software-de-codigo-aberto-para-linux/
