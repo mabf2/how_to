@@ -1,42 +1,33 @@
-Install OpenJDK 18 Debian
-Install curl or wget downloader utility:
+* Install Oracle JDK 17
+* Install curl or wget downloader utility:
 
-$ sudo apt update
+$ sudo apt update && sudo apt upgrade -y
 $ sudo apt install -y curl wget
 
-Visit JDK 18 releases page to download the latest archive.
-$ curl -O https://download.oracle.com/java/18/latest/jdk-18_linux-x64_bin.tar.gz
+Visit JDK 17 releases page to download the latest archive.
+$ curl -O https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
 
 Extract downloaded file using tar command.
-$ tar xvf jdk-18_linux-x64_bin.tar.gz
+$ tar xvf jdk-17_linux-x64_bin.tar.gz
 
 Move the resulting folder to /opt directory.
-$ sudo mv jdk-18 /opt/
+$ sudo mv jdk-17 /usr/lib/jvm/
 
 Configure Java environment:
 
-$ sudo tee /etc/profile.d/jdk18.sh <<EOF
-export JAVA_HOME=/opt/jdk-18
-export PATH=\$PATH:\$JAVA_HOME/bin
-EOF
+Cria link da pasta '/usr/lib/jvm/jdk-17' para a pasta 'default-java'
+$ sudo ln -s /usr/lib/jvm/jdk-17/ default-java
+
+$ sudo vi /etc/profile.d/jdk17_home.sh
+#!/bin/sh
+export JAVA_HOME=/usr/lib/jvm/default-java
+export PATH=$JAVA_HOME/bin:$PATH
 
 Source your profile file and check java command
-$ source /etc/profile.d/jdk18.sh
+$ source /etc/profile.d/jdk17_home.sh
 
 Confirm Java version.
 $ echo $JAVA_HOME
-/opt/jdk-18
 
 Confirm Java version.
 $ java -version
-openjdk version "18" 2022-03-22
-OpenJDK Runtime Environment (build 18+36-2087)
-OpenJDK 64-Bit Server VM (build 18+36-2087, mixed mode, sharing)
-
-
-$ sudo nano /etc/profile
-JAVA_HOME=/usr/lib/jvm/jdk1.7.0
-PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
-export JAVA_HOME
-export JRE_HOME
-export PATH
