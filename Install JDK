@@ -18,6 +18,9 @@ Configure Java environment:
 Cria link da pasta '/usr/lib/jvm/jdk-17' para a pasta 'default-java'
 $ sudo ln -s /usr/lib/jvm/jdk-17/ default-java
 
+Caso exista já o link simbolico, elimineo antes
+$ sudo rm -v default-java
+
 $ sudo vi /etc/profile.d/jdk17_home.sh
 #!/bin/sh
 export JAVA_HOME=/usr/lib/jvm/default-java
