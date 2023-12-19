@@ -1,0 +1,12 @@
+$ sudo apt update
+$ sudo apt install snapd
+$ sudo snap install core
+
+$ sudo snap install skype
+
+$ sudo snap refresh 
+$ snap refresh --list
+$ snap info <snap name>
+
+$ sudo snap refresh <Application>
+$ sudo snap refresh slack --classic
