@@ -1,4 +1,5 @@
 $ sudo nano /usr/share/applications/xxx.desktop
+$ sudo nano ~/.local/share/applications/xxx.desktop
 
 [Desktop Entry]
 Type=Application
