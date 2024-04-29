@@ -1,19 +1,11 @@
-# vi /etc/systemd/logind.conf
+#Controle da tampa do notebook
+$ vi /etc/systemd/logind.conf
 HandleHibernateKeyLongPress=ignore
 HandleLidSwitch=ignore
 HandleLidSwitchExternalPower=ignore
+$ systemctl restart systemd-logind.service 
 
-# systemctl restart systemd-logind.service 
-
-vi /etc/default/grub
+#Controle da tela do Linux
+$ vi /etc/default/grub
 GRUB_CMDLINE_LINUX="consoleblank=300"
-update-grub
-
-lvremove /dev/pve/data
-lvresize -l +100%FREE /dev/pve/root
-resize2fs /dev/mapper/pve-root
-
-
-
-WAN 192.168.0.243
-LAN 192.168.72.1
+$ update-grub
