@@ -28,7 +28,8 @@ Install Docker Engine on Ubuntu (https://docs.docker.com/engine/install/ubuntu/)
 
 Garmin Grafana (https://github.com/arpanghosh8453/garmin-grafana/blob/main/README.md#automatic-install-with-helper-script-recommended-for-less-techy-people)
   # cd ~ && git clone https://github.com/arpanghosh8453/garmin-grafana.git garmin-grafana && cd garmin-grafana && sudo bash ./easy-install.sh
-  # cd ~/garmin-grafana && docker compose run --rm -e MANUAL_START_DATE=YYYY-MM-DD -e MANUAL_END_DATE=YYYY-MM-DD garmin-fetch-data  
+  # cd ~/garmin-grafana && docker compose run --rm -e MANUAL_START_DATE=YYYY-MM-DD -e MANUAL_END_DATE=YYYY-MM-DD garmin-fetch-data 
+  # cd ~/garmin-grafana && docker compose run --rm -e MANUAL_START_DATE=2022-03-25 -e MANUAL_END_DATE=2025-05-13 garmin-fetch-data
   
 Comandos auxiliares 
   # container status with docker ps
