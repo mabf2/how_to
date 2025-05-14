@@ -3,12 +3,6 @@ $ sudo apt update
 $ sudo apt install snapd
 $ sudo snap install core
 
-Install Skype
-$ sudo snap install skype
-
-Uninstall Skype
-$ sudo snap remove --purge skype
-
 $ sudo snap refresh
 $ snap refresh --list
 $ snap info <snap name>
